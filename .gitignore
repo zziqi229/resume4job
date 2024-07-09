@@ -1,0 +1,6 @@
+*.aux
+*.code-workspace
+*.log
+*.out
+*.pdf
+*.synctex.gz

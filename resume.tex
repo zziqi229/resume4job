@@ -1,0 +1,295 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% Website: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[UTF8]{ctex}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{ #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{ #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingtwo}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{ #2} \\
+      % \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\vspace{-10pt}\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-10pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://codeforces.com/profile/zzq229}{\Large 赵子琦}} & 邮箱 : \href{mailto:zziqi229@gmail.com}{zziqi@buaa.edu.cn}\\
+   & 电话 : \href{tel:+8617813063387}{+86-173-3194-9330} \\
+   & 微信号 : zzq229cr\\
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+\vspace{-20pt}
+\section{教育经历}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {北京航空航天大学}{北京}
+      {计算机科学与技术;  硕士在读,2025年毕业}{2022年9月 -- 至今}
+    \resumeSubheading
+      {哈尔滨工程大学}{哈尔滨, 黑龙江}
+      {计算机科学与技术;  排名: 4/315, 前1.3\%}{2018年9月 -- 2022年6月}
+  \resumeSubHeadingListEnd
+
+\section{实习经历}
+    \begin{itemize}[leftmargin=*,itemsep=-20pt]
+        \resumeSubheadingtwo
+            {字节跳动 Data-AML-科学计算}{2023年5月 -- 至今}
+            \\[10pt]
+            % \resumeItem{开发}
+            负责弹性算力平台开发，基于云原生技术栈，屏蔽业务场景和资源平台的复杂性,为各类计算负载提供简洁、一致的使用接口，实现低成本、高吞吐任务计算。
+            \resumeItemListStart
+                 \resumeItem{}
+                {基于 k8s，virtual kubelet 实现混合云调度，覆盖多个算力池，支持潮汐资源，提供统一计算服务.}
+                \resumeItem{}
+                {覆盖了20w 核CPU，4k块GPU，高峰同时运行 3w+ 计算容器、10w+ 计算任务，并保证高可用.}
+                \resumeItem{}
+                {计算任务动态分发、容器复用、多进程并发执行、失败超时重试、容器动态扩缩容、优先级等功能.}
+            \resumeItemListEnd
+    \end{itemize}
+
+\section{项目经历}
+    \begin{itemize}[leftmargin=*,itemsep=5pt]
+        \resumeSubheadingtwo
+            {MIT6.824分布式系统}{\href{https://github.com/zzq229-creator/6.824}{https://github.com/zzq229-creator/6.824}}
+            % 麻省理工学院研究生课程，通过 paper reading/lectures/labs 学习和理解分布式系统的基础知识.涉及到 MapReduce、GFS、Raft、ZooKeeper、Memcached 等分布式系统领域经典论文.实验中实现MapReduce、Raft算法.
+            \\[7pt]
+                % {麻省理工学院研究生课程,涉及到MapReduce、GFS、Raft、ZooKeeper、Spanner、Spark等技术.并构建了一个高并发高可用的线性一致分片键值数据库.}
+            \resumeItemListStart
+                % \resumeItem{MapReduce}
+                    % {根据MapReduce论文实现了一个分布式MapReduce框架，实现worker失效处理}
+                \resumeItem{Raft算法}
+                    {实现Raft，包括领导选举、日志复制、日志压缩、持久化，容忍网络丢包、网络分区、节点失效等错误.}
+                \resumeItem{键值数据库}
+                    {基于Raft共识构建高可用的分片键值数据库.支持增删数据节点、分片动态迁移、过期分片回收、不停机配置热更新.
+                        % \begin{itemize}
+                        %     \item 构建高可用的分布式分片配置管理器，支持增删数据节点。
+                        %     \item 每个分片服务集群询问配置管理器负责一组分片，实现了分片迁移、垃圾分片回收、配置更改期间提供服务,并保证严格线性一致.
+                        % \end{itemize}
+                    }
+            \resumeItemListEnd
+
+        \resumeSubheadingtwo
+            {校内信息平台}{}{}
+            % {\href{https://qinglianjie.cn/}{https://qinglianjie.cn}}
+            \\[7pt]
+            校园内网信息一站式获取,使用微服务架构和 Celery 分布式任务队列系统。拥有 5000+ 用户，提供所有课程信息查询,课表、成绩、学分查询汇总，课程出分提醒，统计课程成绩分布，实现课程论坛. 
+    \end{itemize}
+
+\section{学术经历}
+    \begin{itemize}[leftmargin=*,itemsep=-20pt]
+        \resumeSubheadingtwo
+            {知识图谱增强多兴趣学习的多行为推荐}{https://dl.acm.org/doi/full/10.1145/3606369,TOIS(CCF A类期刊)}
+            \\[5pt]
+            共同一作，首次在多行为推荐中引入多兴趣学习，挖掘用户与物品交互背后的兴趣，提出使用知识图谱提取兴趣的初始表示，结合了动态路由方案进一步探索每个行为背后的兴趣，在多个数据集上达到了最佳的推荐效果.
+            % 首次在多行为推荐中引入多兴趣学习.在大多数推荐场景中存在多种行为类型（例如点击、加入购物车、购买等），不同的行为类型可能反映用户的不同兴趣。我们提出使用知识图谱提取物品的每个兴趣的初始表示，之后结合了动态路由方案进一步探索每个行为背后的兴趣。我们的模型在四个数据集上达到了最佳的推荐性能.
+    \end{itemize}
+
+\section{曾获奖项}
+    \begin{itemize}[leftmargin=*,itemsep=-20pt]
+        \resumeSubheadingtwo
+          {2018-2019年度国家奖学金}{2018-2019年}
+        \resumeSubheadingtwo
+          {2019-2020年度校长奖学金}{2019-2020年}
+      % \resumeSubItem{第 45 届 ICPC 国际大学生程序设计竞赛亚洲区域赛（上海站) 金牌}
+        \resumeSubheadingtwo
+          {第 45 届 ICPC 国际大学生程序设计竞赛亚洲区域赛\,金牌}{2020年12月}
+        % \resumeSubheadingtwo
+          % {第 44 届 ICPC 国际大学生程序设计竞赛亚洲区域赛（上海站) 银牌}{2019年11月}
+        % \resumeSubheadingtwo
+          % {第六届 CCPC 中国大学生程序设计竞赛（绵阳站）银牌}{2020年11月}
+        \resumeSubheadingtwo
+          {第五届 CCPC 中国大学生程序设计竞赛\,银牌}{2019年9月}
+        \resumeSubheadingtwo
+          {2020 CCF 中国大学生系统与程序设计竞赛全国总决赛\,金牌 (排名:28/1041)}{2020年10月}
+        \resumeSubheadingtwo
+          {2020 黑龙江省大学生程序设计竞赛\,亚军}{2020年9月}
+        \resumeSubheadingtwo
+          {2020 东北地区大学生程序设计竞赛\,一等奖(第4名)}{2020年10月}
+        % \resumeSubheadingtwo
+          % {2019 东北地区大学生程序设计竞赛 \, 一等奖}{2019年5月}
+        \resumeSubheadingtwo
+          {2019 全国大学生数学建模竞赛黑龙江赛区\,一等奖}{2019年9月}
+        % \resumeSubheadingtwo
+          % {第十届蓝桥杯全国软件和信息技术专业人才大赛黑龙江赛区 \, 一等奖(第4名)}{2019年3月}
+    \end{itemize}
+
+% \section{曾获荣誉}
+%     \begin{itemize}[leftmargin=*,itemsep=-20pt]
+%       % \resumeSubItem{第 45 届 ICPC 国际大学生程序设计竞赛亚洲区域赛（上海站) 金牌}
+%         \resumeSubheadingtwo
+%           {2018-2019年度国家奖学金}{2018-2019年}
+%         \resumeSubheadingtwo
+%           {2019-2020年度校长奖学金}{2019-2020年}
+%         % \resumeSubheadingtwo
+%           % {校级三好学生}{2018-2019年}
+%         % \resumeSubheadingtwo
+%           % {校级一等奖学金}{2018-2019,2019-2020,2020-2021}
+%     \end{itemize}
+
+
+%--------PROGRAMMING SKILLS------------
+\section{个人}
+ \resumeSubHeadingListStart
+   \item{
+     {热爱code \& debug，具有扎实的代码能力、优秀的算法和数据结构基础，对深度学习有一些了解}
+      % {求知欲强，有比较好的优秀的学习和沟通能力}
+     % \hfill
+     % \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
+   }
+   \item{
+    求知欲强，有较好的学习和沟通能力.
+   }   
+   % \item{
+    % 能够使用Numpy、Pandas等库进行数据处理、分析
+   % }
+ \resumeSubHeadingListEnd
+
+% %-----------EXPERIENCE-----------------
+% \section{Experience}
+%   \resumeSubHeadingListStart
+
+%     \resumeSubheading
+%       {Google}{Mountain View, CA}
+%       {Software Engineer}{Oct 2016 - Present}
+%       \resumeItemListStart
+%         \resumeItem{Tensorflow}
+%           {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models.}
+%         \resumeItem{Apache Beam}
+%           {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
+%       \resumeItemListEnd
+
+%     \resumeSubheading
+%       {Coursera}{Mountain View, CA}
+%       {Senior Software Engineer}{Jan 2014 - Oct 2016}
+%       \resumeItemListStart
+%         \resumeItem{Notifications}
+%           {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
+%         \resumeItem{Nostos}
+%           {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
+%         \resumeItem{Workflows}
+%           {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
+%         \resumeItem{Data Collection}
+%           {Designed the internal survey and crowd sourcing platfowm which allowed for creating various tasks for crowd sourding or embedding surveys across the Coursera platform.}
+%         \resumeItem{Dev Environment}
+%           {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
+%         \resumeItem{Data Warehousing}
+%           {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
+%         \resumeItem{Recommendations}
+%           {Core service for all recommendation systems at Coursesa, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
+%         \resumeItem{Content Discovery}
+%           {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
+%         \resumeItem{Course Dashboards}
+%           {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
+%       \resumeItemListEnd
+
+%     \resumeSubheading
+%       {Lucena Research}{Atlanta, GA}
+%       {Data Scientist}{Summer 2012 and 2013}
+%       \resumeItemListStart
+%         \resumeItem{Portfolio Management}
+%           {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
+%         \resumeItem{QuantDesk}
+%           {Python backend for a web application used by hedge fund managers for portfolio management.}
+%       \resumeItemListEnd
+
+%   \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+% \section{Projects}
+%   \resumeSubHeadingListStart
+%     \resumeSubItem{QuantSoftware Toolkit}
+%       {Open source python library for financial data analysis and machine learning for finance.}
+%     \resumeSubItem{Github Visualization}
+%       {Data Visualization of Git Log data using D3 to analyze project trends over time.}
+%     \resumeSubItem{Recommendation System}
+%       {Music and Movie recommender systems using collaborative filtering on public datasets.}
+% %     \resumeSubItem{Mac Setup}
+% %       {Book that gives step by step instructions on setting up developer environment on Mac OS.}
+%   \resumeSubHeadingListEnd
+
+% %
+%--------PROGRAMMING SKILLS------------
+% \section{编程语言}
+%  \resumeSubHeadingListStart
+%    \item{
+%      \textbf{}{C/C++, Python, Golang, Java}
+%      % \hfill
+%      % \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
+%    }
+%  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
