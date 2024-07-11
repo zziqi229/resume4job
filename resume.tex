@@ -17,7 +17,11 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[UTF8]{ctex}
-
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{eso-pic}
+% \usepackage{fontawesome}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -76,6 +80,16 @@
 \newcommand{\resumeItemListStart}{\vspace{-10pt}\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-10pt}}
 
+\newcommand{\basicInfo}[1]{
+  \centerline{\sffamily\large{#1}}
+  \vspace{1.5ex}
+}
+
+\newcommand{\name}[1]{
+  \centerline{\Large\songti{#1}}
+  \vspace{1.25ex}
+}
+
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -83,14 +97,34 @@
 \begin{document}
 
 %----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{https://codeforces.com/profile/zzq229}{\Large 赵子琦}} & 邮箱 : \href{mailto:zziqi229@gmail.com}{zziqi@buaa.edu.cn}\\
-   & 电话 : \href{tel:+8617813063387}{+86-173-3194-9330} \\
-   & 微信号 : zzq229cr\\
-\end{tabular*}
+
+% \name{赵子琦}
+% \basicInfo{
+%   \href{mailto:zziqi@buaa.edu.cn}{zziqi@buaa.edu.cn} \textperiodcentered\ 
+%   \href{tel:+8617813063387}{ 178-1306-3387}    \textperiodcentered\ 
+%   zzq229cr}
+
+\begin{minipage}[t]{0.12\textwidth}
+  % \vspace*{-2.5cm} % 调整垂直位置
+  % \includegraphics[width=\textwidth]{zzqpic.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.7\textwidth}
+      \name{赵子琦}
+      \basicInfo{
+        \href{mailto:zziqi@buaa.edu.cn}{zziqi@buaa.edu.cn} \textperiodcentered\ 
+        \href{tel:+8617813063387}{ 178-1306-3387}    \textperiodcentered\ 
+        zzq229cr}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.12\textwidth}
+    \vspace*{-1cm} % 调整垂直位置
+    \includegraphics[width=\textwidth]{zzqpic-no-bg.png}
+\end{minipage}
+
 
 %-----------EDUCATION-----------------
-\vspace{-20pt}
+\vspace{-21pt}
 \section{教育经历}
   \resumeSubHeadingListStart
     \resumeSubheading
@@ -174,29 +208,15 @@
           {2020 CCF 中国大学生系统与程序设计竞赛全国总决赛\,金牌 (排名:28/1041)}{2020年10月}
         \resumeSubheadingtwo
           {2020 黑龙江省大学生程序设计竞赛\,亚军}{2020年9月}
-        \resumeSubheadingtwo
-          {2020 东北地区大学生程序设计竞赛\,一等奖(第4名)}{2020年10月}
+        % \resumeSubheadingtwo
+          % {2020 东北地区大学生程序设计竞赛\,一等奖(第4名)}{2020年10月}
         % \resumeSubheadingtwo
           % {2019 东北地区大学生程序设计竞赛 \, 一等奖}{2019年5月}
-        \resumeSubheadingtwo
-          {2019 全国大学生数学建模竞赛黑龙江赛区\,一等奖}{2019年9月}
+        % \resumeSubheadingtwo
+          % {2019 全国大学生数学建模竞赛黑龙江赛区\,一等奖}{2019年9月}
         % \resumeSubheadingtwo
           % {第十届蓝桥杯全国软件和信息技术专业人才大赛黑龙江赛区 \, 一等奖(第4名)}{2019年3月}
     \end{itemize}
-
-% \section{曾获荣誉}
-%     \begin{itemize}[leftmargin=*,itemsep=-20pt]
-%       % \resumeSubItem{第 45 届 ICPC 国际大学生程序设计竞赛亚洲区域赛（上海站) 金牌}
-%         \resumeSubheadingtwo
-%           {2018-2019年度国家奖学金}{2018-2019年}
-%         \resumeSubheadingtwo
-%           {2019-2020年度校长奖学金}{2019-2020年}
-%         % \resumeSubheadingtwo
-%           % {校级三好学生}{2018-2019年}
-%         % \resumeSubheadingtwo
-%           % {校级一等奖学金}{2018-2019,2019-2020,2020-2021}
-%     \end{itemize}
-
 
 %--------PROGRAMMING SKILLS------------
 \section{个人}
@@ -214,81 +234,6 @@
     % 能够使用Numpy、Pandas等库进行数据处理、分析
    % }
  \resumeSubHeadingListEnd
-
-% %-----------EXPERIENCE-----------------
-% \section{Experience}
-%   \resumeSubHeadingListStart
-
-%     \resumeSubheading
-%       {Google}{Mountain View, CA}
-%       {Software Engineer}{Oct 2016 - Present}
-%       \resumeItemListStart
-%         \resumeItem{Tensorflow}
-%           {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models.}
-%         \resumeItem{Apache Beam}
-%           {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
-%       \resumeItemListEnd
-
-%     \resumeSubheading
-%       {Coursera}{Mountain View, CA}
-%       {Senior Software Engineer}{Jan 2014 - Oct 2016}
-%       \resumeItemListStart
-%         \resumeItem{Notifications}
-%           {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-%         \resumeItem{Nostos}
-%           {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-%         \resumeItem{Workflows}
-%           {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-%         \resumeItem{Data Collection}
-%           {Designed the internal survey and crowd sourcing platfowm which allowed for creating various tasks for crowd sourding or embedding surveys across the Coursera platform.}
-%         \resumeItem{Dev Environment}
-%           {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-%         \resumeItem{Data Warehousing}
-%           {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-%         \resumeItem{Recommendations}
-%           {Core service for all recommendation systems at Coursesa, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-%         \resumeItem{Content Discovery}
-%           {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-%         \resumeItem{Course Dashboards}
-%           {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
-%       \resumeItemListEnd
-
-%     \resumeSubheading
-%       {Lucena Research}{Atlanta, GA}
-%       {Data Scientist}{Summer 2012 and 2013}
-%       \resumeItemListStart
-%         \resumeItem{Portfolio Management}
-%           {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
-%         \resumeItem{QuantDesk}
-%           {Python backend for a web application used by hedge fund managers for portfolio management.}
-%       \resumeItemListEnd
-
-%   \resumeSubHeadingListEnd
-
-
-%-----------PROJECTS-----------------
-% \section{Projects}
-%   \resumeSubHeadingListStart
-%     \resumeSubItem{QuantSoftware Toolkit}
-%       {Open source python library for financial data analysis and machine learning for finance.}
-%     \resumeSubItem{Github Visualization}
-%       {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-%     \resumeSubItem{Recommendation System}
-%       {Music and Movie recommender systems using collaborative filtering on public datasets.}
-% %     \resumeSubItem{Mac Setup}
-% %       {Book that gives step by step instructions on setting up developer environment on Mac OS.}
-%   \resumeSubHeadingListEnd
-
-% %
-%--------PROGRAMMING SKILLS------------
-% \section{编程语言}
-%  \resumeSubHeadingListStart
-%    \item{
-%      \textbf{}{C/C++, Python, Golang, Java}
-%      % \hfill
-%      % \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
-%    }
-%  \resumeSubHeadingListEnd
 
 
 %-------------------------------------------
