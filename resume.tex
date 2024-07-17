@@ -122,43 +122,49 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {北京航空航天大学}{北京}
-      {计算机科学与技术;  硕士在读,2025年毕业}{2022年9月 -- 至今}
+      {计算机科学与技术;  硕士在读, 2025年毕业}{2022年9月 -- 至今}
     \resumeSubheading
       {哈尔滨工程大学}{哈尔滨, 黑龙江}
       {计算机科学与技术;  排名: 4/315, 前1.3\%}{2018年9月 -- 2022年6月}
   \resumeSubHeadingListEnd
 
+\vspace{-10pt}
 \section{实习经历}
-    \begin{itemize}[leftmargin=*,itemsep=-20pt]
+    \begin{itemize}[leftmargin=*,itemsep=-10pt]
         \resumeSubheadingtwo
             {字节跳动 Data-AML-科学计算}{2023年5月 -- 至今}
             \\[10pt]
             % \resumeItem{开发}
-            负责弹性算力平台开发，基于云原生技术栈，屏蔽业务场景和资源平台的复杂性,为各类计算负载提供简洁、一致的使用接口，实现低成本、高吞吐任务计算。
+            弹性算力平台开发和维护，基于云原生技术栈，屏蔽业务场景和资源平台的复杂性，为各类计算负载提供简洁、一致的使用接口，实现低成本、高吞吐任务计算
             \resumeItemListStart
                  \resumeItem{}
-                {基于 k8s，virtual kubelet 实现混合云调度，覆盖多个算力池，支持潮汐资源，提供统一计算服务.}
+                {基于 Kubernetes、Virtual Kubelet实现容器化计算，支持对接多个算力池，提供统一计算服务，已接入 $400K$ 核 CPU、$3K$ 张 GPU，大部分为低成本潮汐资源}
                 \resumeItem{}
-                {覆盖了20w 核CPU，4k块GPU，高峰同时运行 3w+ 计算容器、10w+ 计算任务，并保证高可用.}
+                {实现高通量任务计算，高峰同时运行 $30K+$ 计算容器，每秒完成 $5K$ 任务，为任务提供 At-Least-Once 保证，尽力保证队列中任务 FIFO 执行}
                 \resumeItem{}
-                {计算任务动态分发、容器复用、多进程并发执行、失败超时重试、容器动态扩缩容、优先级等功能.}
+                {支持配置任务超时时间，支持配置任务失败自动换容器重试，支持批量停止、重启、查询任务}
+                \resumeItem{}
+                {支持容器动态扩缩容，配置热更新，支持一批任务混合使用多种 GPU ，通过容器抢占式优先级实现任务优先级}
+                \resumeItem{}
+                {容忍容器失效，潮汐资源下行容器被回收或者被高优容器抢占，因此挂起的任务在同机房容器中拉起，以实现断点续算。新容器调度到挂起任务最多的机房}
             \resumeItemListEnd
     \end{itemize}
 
+\vspace{-10pt}
 \section{项目经历}
     \begin{itemize}[leftmargin=*,itemsep=5pt]
         \resumeSubheadingtwo
             {MIT6.824分布式系统}{\href{https://github.com/zzq229-creator/6.824}{https://github.com/zzq229-creator/6.824}}
             % 麻省理工学院研究生课程，通过 paper reading/lectures/labs 学习和理解分布式系统的基础知识.涉及到 MapReduce、GFS、Raft、ZooKeeper、Memcached 等分布式系统领域经典论文.实验中实现MapReduce、Raft算法.
-            \\[7pt]
+            \\[10pt]
                 % {麻省理工学院研究生课程,涉及到MapReduce、GFS、Raft、ZooKeeper、Spanner、Spark等技术.并构建了一个高并发高可用的线性一致分片键值数据库.}
             \resumeItemListStart
                 % \resumeItem{MapReduce}
                     % {根据MapReduce论文实现了一个分布式MapReduce框架，实现worker失效处理}
                 \resumeItem{Raft算法}
-                    {实现Raft，包括领导选举、日志复制、日志压缩、持久化，容忍网络丢包、网络分区、节点失效等错误.}
+                    {完整实现 Raft 算法，包括领导选举、日志复制、日志压缩、快照、持久化}
                 \resumeItem{键值数据库}
-                    {基于Raft共识构建高可用的分片键值数据库.支持增删数据节点、分片动态迁移、过期分片回收、不停机配置热更新.
+                    {基于Raft共识构建高可用的分片键值数据库，支持不停机扩缩数据节点、分片动态迁移、过期分片回收、配置热更新，能容忍网络丢包、网络分区、节点失效等错误下实现线性一致性
                         % \begin{itemize}
                         %     \item 构建高可用的分布式分片配置管理器，支持增删数据节点。
                         %     \item 每个分片服务集群询问配置管理器负责一组分片，实现了分片迁移、垃圾分片回收、配置更改期间提供服务,并保证严格线性一致.
@@ -166,22 +172,24 @@
                     }
             \resumeItemListEnd
 
-        \resumeSubheadingtwo
-            {校内信息平台}{}{}
+        % \resumeSubheadingtwo
+            % {校内信息平台}{}{}
             % {\href{https://qinglianjie.cn/}{https://qinglianjie.cn}}
-            \\[7pt]
-            校园内网信息一站式获取,使用微服务架构和 Celery 分布式任务队列系统。拥有 5000+ 用户，提供所有课程信息查询,课表、成绩、学分查询汇总，课程出分提醒，统计课程成绩分布，实现课程论坛. 
+            % \\[7pt]
+            % 校园内网信息一站式获取,使用微服务架构和 Celery 分布式任务队列系统。拥有 5000+ 用户，提供所有课程信息查询,课表、成绩、学分查询汇总，课程出分提醒，统计课程成绩分布，实现课程论坛. 
     \end{itemize}
 
+\vspace{-10pt}
 \section{学术经历}
     \begin{itemize}[leftmargin=*,itemsep=-20pt]
         \resumeSubheadingtwo
-            {知识图谱增强多兴趣学习的多行为推荐}{https://dl.acm.org/doi/full/10.1145/3606369,TOIS(CCF A类期刊)}
+            {知识图谱增强多兴趣学习的多行为推荐}{https://dl.acm.org/doi/full/10.1145/3606369,TOIS(CCF A)}
             \\[5pt]
             共同一作，首次在多行为推荐中引入多兴趣学习，挖掘用户与物品交互背后的兴趣，提出使用知识图谱提取兴趣的初始表示，结合了动态路由方案进一步探索每个行为背后的兴趣，在多个数据集上达到了最佳的推荐效果.
             % 首次在多行为推荐中引入多兴趣学习.在大多数推荐场景中存在多种行为类型（例如点击、加入购物车、购买等），不同的行为类型可能反映用户的不同兴趣。我们提出使用知识图谱提取物品的每个兴趣的初始表示，之后结合了动态路由方案进一步探索每个行为背后的兴趣。我们的模型在四个数据集上达到了最佳的推荐性能.
     \end{itemize}
 
+\vspace{-10pt}
 \section{曾获奖项}
     \begin{itemize}[leftmargin=*,itemsep=-20pt]
         \resumeSubheadingtwo
@@ -211,7 +219,7 @@
           % {第十届蓝桥杯全国软件和信息技术专业人才大赛黑龙江赛区 \, 一等奖(第4名)}{2019年3月}
     \end{itemize}
 
-%--------PROGRAMMING SKILLS------------
+\vspace{-10pt}
 \section{个人}
  \resumeSubHeadingListStart
    \item{
