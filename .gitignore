@@ -2,6 +2,6 @@
 *.code-workspace
 *.log
 *.out
-*.pdf
+resume.pdf
 *.synctex.gz
 .DS_Store
